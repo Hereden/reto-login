@@ -17,6 +17,17 @@ function comprobar(){
     }
 }
 
+function comprobar3(){    
+    var correo=document.getElementById("emailInput2").value;
+    var pass=document.getElementById("passwordInput2").value;
+    console.log(`Intento 1: ${correo} ${pass}`)
+    if(localStorage.getItem("email")==correo && localStorage.getItem("password")==pass){
+        document.getElementById("loginMenu").setAttribute("style","display:none;visibility:hidden;");
+        document.getElementById("formularios").setAttribute("src","login.html");
+        localStorage.setItem('siniciada','TRUE');
+    }
+}
+
 function comprobar2(){
     if(localStorage.getItem("siniciada")=="TRUE"){
         document.getElementById("formularios").setAttribute("src","login.html");
